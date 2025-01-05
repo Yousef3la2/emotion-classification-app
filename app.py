@@ -28,15 +28,24 @@ uploaded_file = st.file_uploader(
 )
 
 if uploaded_file is not None:
-    # Display the uploaded image
+    # Load the uploaded image
     image = Image.open(uploaded_file).convert("L")  # Convert to grayscale
-    st.image(image, caption="Uploaded Image", use_container_width=True)
+
+    # Resize the image for display while maintaining aspect ratio
+    max_width = 300  # Define the maximum width for display
+    original_width, original_height = image.size
+    aspect_ratio = original_height / original_width
+    display_height = int(max_width * aspect_ratio)
+    resized_image = image.resize((max_width, display_height))
+
+    # Display the resized image
+    st.image(resized_image, caption="Uploaded Image (Resized for Display)", use_container_width=False)
 
     # Add a spinner while processing
     with st.spinner("Processing the image..."):
-        # Preprocess the image
-        image = image.resize((48, 48))  # Resize to 48x48 pixels
-        image_array = img_to_array(image)
+        # Preprocess the image for prediction
+        preprocessed_image = image.resize((48, 48))  # Resize to 48x48 pixels
+        image_array = img_to_array(preprocessed_image)
         image_array = np.expand_dims(image_array, axis=0)  # Add batch dimension
         image_array = image_array / 255.0  # Normalize
 
