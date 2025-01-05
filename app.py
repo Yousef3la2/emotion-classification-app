@@ -8,7 +8,7 @@ import numpy as np
 model = load_model("model.keras")
 
 # Emotion labels
-labels = ['angry', 'disgust', 'fear', 'happy', 'neutral', 'sad', 'surprise']
+labels = ['sad', 'disgust', 'fear', 'happy', 'neutral', 'angry', 'surprise']
 
 st.title("Emotion Classification App")
 st.write("Upload an image to classify the emotion.")
