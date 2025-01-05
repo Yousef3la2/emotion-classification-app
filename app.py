@@ -41,7 +41,7 @@ if uploaded_file is not None:
     # Center the image using columns
     col1, col2, col3 = st.columns([1, 2, 1])  # Add 3 columns with col2 being the middle one
     with col2:
-        st.image(resized_image, caption="Uploaded Image (Resized for Display)", use_column_width=True)
+        st.image(resized_image, caption="Uploaded Image (Resized for Display)", use_container_width=True)
 
     # Add a spinner while processing
     with st.spinner("Processing the image..."):
