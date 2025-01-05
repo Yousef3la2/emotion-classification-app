@@ -29,3 +29,31 @@ To get started, run:
 
 ```bash
 pip install -r requirements.txt
+```
+
+## Files 📂
+- **app.py**: The brain behind the operation 💡
+- **model.keras**: The emotion-detecting superhero 🦸‍♀️
+- **requirements.txt**: The recipe to make it all work 📝
+
+## Usage 🚀
+
+1. Clone the repo and give it a try! 🏃‍♂️💨
+
+   ```bash
+   git clone https://github.com/your-username/emotion-classification-app.git
+   cd emotion-classification-app
+   ```
+
+2. Install the dependencies (it's just like baking cookies, but for code 🍪):
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Fire up the app with Streamlit:
+   
+  ```bash
+   streamlit run app.py
+   ```
+4. Open your browser and go to http://localhost:8501 to see your face in the limelight! 🌟
+5. Upload a face pic, and BAM! The app will tell you if you're smiling 😄, shocked 😲, or looking like a grumpy cat 😾.
