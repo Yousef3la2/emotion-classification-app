@@ -38,8 +38,16 @@ if uploaded_file is not None:
     display_height = int(max_width * aspect_ratio)
     resized_image = image.resize((max_width, display_height))
 
-    # Display the resized image
-    st.image(resized_image, caption="Uploaded Image (Resized for Display)", use_container_width=False)
+    # Display the resized image in the center
+    st.markdown(
+        f"""
+        <div style="display: flex; justify-content: center; margin-top: 20px;">
+            <img src="data:image/png;base64,{st.image(resized_image, caption=None, use_container_width=False)}" 
+                 alt="Uploaded Image" style="border-radius: 10px;">
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
     # Add a spinner while processing
     with st.spinner("Processing the image..."):
